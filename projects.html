@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+	<script src="p5.min.js"></script>
+	<script src="p5.dom.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+  </head>
+  <body>
+	<script src="header.js"></script> 
+
+	<script>
+	var mouseDown;
+	var header;
+	var projects;
+
+	function setup() {
+		mouseDown = false;
+		header = new Header();
+		projects = new Projects();
+
+		//load in projects
+		var youtube_channel = loadJSON('youtube_channel.JSON');
+		projects.projects = [youtube_channel]; //default ordering of projects!!!
+
+		//initialize which to display
+		projects.search();
+
+		//create canvas
+		createCanvas(windowWidth, max(windowHeight, header.height() + project.height()));
+	}
+
+	function draw() {
+		projects.draw(header.height());
+		header.draw();
+	}
+
+	function mousePressed() {
+		mouseDown = true;
+	}
+
+	function mouseReleased() {
+		mouseDown = false;
+		header.click();
+		projects.click() //might call projects.search function if changes search
+	}
+
+	//hopefully don't need keyPressed function cuz we'll have an html text box object
+
+	function windowResized() {
+		header.resize();
+		projects.resize();
+		resizeCanvas(windowWidth, max(windowHeight, header.height() + project.height()));
+	}
+	</script>
+  </body>
+</html>

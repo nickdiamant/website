@@ -1,0 +1,12 @@
+{
+	"title": "Nickimations - YouTube Channel",
+	"tags": ["animation", "personal"],
+	"thumbnail": "youtube_channnel.jpg",
+	"content": [
+		{"type": "Title",
+			"title": "Description",}, 
+		{"type": "Iframe",
+			"info": "src=\"https://www.youtube.com/embed/OIfEHD3KqCg\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen"}],
+		{"type": "Text", 
+			"text": "I published weekly animations to the Nickimations YouTube channel from fall 2011 to summer 2018."}
+}
